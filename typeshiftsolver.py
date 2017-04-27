@@ -7,12 +7,10 @@ def main():
 
 	# Tiles, by column, in typeshift puzzle
 	tiles = ['mlad','arem','cnio','avtn','uig','esrn','egtr']
-	#tiles = ['suc','etnl','ouel','plas','iurp','nae','dgrl']
-        #^ This took 1 hr 21 min 9.56 sec. 15 words found.
 
 	#Print and analyze columns
 	columnLengths = []
-	print('Columns')
+        print 'Columns:'
 	for column in tiles:
 		print(column)
 		columnLengths.append(len(column))
@@ -36,6 +34,7 @@ def main():
 
 		words.append(word)
 
+                #Step through combinations (like counting)
 		comboIndex = step(comboIndex,columnLengths)
 
 	#Check words against dictionary (enchant)
@@ -50,8 +49,11 @@ def main():
         # End of program
 
 def step(ndx,lens):
+    #Step through combination like counting
+    # ex: aaa,aab,aac,aba,abb,abc,aca,....
 	for i in range(len(ndx)-1,-1,-1):
 		ndx[i] += 1
+                #If max index not exceeded, end for loop
 		if ndx[i] >= lens[i]:
 			ndx[i] = 0
 		else:
