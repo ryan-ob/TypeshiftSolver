@@ -1,4 +1,4 @@
-##Typeshift Solver
+## Typeshift Solver
 
 Solver for word puzzle game [Typeshift](https://www.merriam-webster.com/word-games/typeshift).
 
